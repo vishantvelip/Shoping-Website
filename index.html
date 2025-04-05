@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopping Interface</title>
+  <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="androids.css" />
+  <script src="https://kit.fontawesome.com/b35d899e78.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <i class="fa-solid fa-xmark close-btn" id="closeSidebar"></i>
+      <div class="auth-buttons">
+        <button id="signupBtn">Signup</button>
+        <button id="loginBtn">Login</button>
+      </div>
+      <ul class="categories">
+        <li>Electronics</li>
+        <li>Clothing</li>
+        <li>Home & Kitchen</li>
+        <li>Grocery</li>
+      </ul>
+    </nav>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <i class="fa-solid fa-bars menu-btn" id="openSidebar"></i>
+      <div class="searcher">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <select id="sortSelect">
+          <option value="default">Sort by</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="name">Name</option>
+        </select>
+      </div>
+      <i class="fa-solid fa-cart-plus cart-btn" id="openCart"></i>
+      <i class="fa-solid fa-heart wishlist-btn" id="openWishlist"></i>
+      <i class="fa-solid fa-history order-btn" id="openOrder"></i>
+    </header>
+
+    <!-- Product Grid -->
+    <ul class="product-container" id="productContainer"></ul>
+
+    <!-- View Product Modal -->
+    <div class="modal view-modal" id="viewModal">
+      <span class="close-modal" id="closeView">&times;</span>
+      <div class="modal-content">
+        <img id="viewImage" />
+        <h1 id="viewTitle"></h1>
+        <p id="viewDesc"></p>
+        <h3 id="viewPrice"></h3>
+        <div class="product-reviews">
+          <h4>Reviews</h4>
+          <div id="reviewsList"></div>
+          <div class="add-review">
+            <textarea placeholder="Write a review..." id="reviewText"></textarea>
+            <button id="submitReview">Submit Review</button>
+          </div>
+        </div>
+        <div class="product-actions">
+          <input type="number" min="1" value="1" class="qty" id="viewQty" />
+          <button id="addToCartBtn">Add to Cart</button>
+          <button id="addToWishlistBtn">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal cart-modal" id="cartModal">
+      <div class="modal-header">
+        <h2>Your Cart</h2>
+        <span class="close-modal" id="closeCart">&times;</span>
+      </div>
+      <div class="cart-list" id="cartList"></div>
+      <div class="cart-footer">
+        <p>Total: <span id="cartTotal">₹0</span></p>
+        <button id="buyBtn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div class="modal wishlist-modal" id="wishlistModal">
+      <div class="modal-header">
+        <h2>Your Wishlist</h2>
+        <span class="close-modal" id="closeWishlist">&times;</span>
+      </div>
+      <ul class="wishlist-list" id="wishlistList"></ul>
+    </div>
+
+    <!-- Order History Modal -->
+    <div class="modal order-modal" id="orderModal">
+      <div class="modal-header">
+        <h2>Order History</h2>
+        <span class="close-modal" id="closeOrder">&times;</span>
+      </div>
+      <ul class="order-list" id="orderList"></ul>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal auth-modal" id="signupModal">
+      <div class="modal-header">
+        <h2>Sign Up</h2>
+        <span class="close-modal" id="closeSignup">&times;</span>
+      </div>
+      <form id="signupForm">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal auth-modal" id="loginModal">
+      <div class="modal-header">
+        <h2>Login</h2>
+        <span class="close-modal" id="closeLogin">&times;</span>
+      </div>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
